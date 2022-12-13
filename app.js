@@ -1,9 +1,12 @@
 const express = require('express')
 const path = require("path");
 const app = express()
+const cors = require('cors');
 
+const url = "https://www.nseindia.com/api/option-chain-indices?symbol=NIFTY";
 // #############################################################################
 // Logs all request paths and method
+app.use(cors())
 app.use(function (req, res, next) {
   res.set('x-timestamp', Date.now())
   res.set('x-powered-by', 'cyclic.sh')
